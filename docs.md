@@ -9,6 +9,7 @@ Iridium is a Object-Oriented Programming Language Designed to be Simple and Powe
 - It's perfect for beginners and pros alike!
 - It's open-source under the GNU General Public License v3.0
 - Its written in the blazing fast language Rust (there's also a NodeJS version, which has more syntax.)
+- Syntax for getting internal variables
 
 
 # Syntax (unfinished)
@@ -60,11 +61,8 @@ class hello:hewwo{
 
 ## Methods
 ```
-static  new(){
-// Stuff
-end static method.
-static string  new([Args]);
-//Stuff
+static method_name(arg1,arg2){
+	// DO cool stuff
 }
 ```
 

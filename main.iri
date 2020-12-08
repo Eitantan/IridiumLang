@@ -1,5 +1,6 @@
+// Variables
 print = "Hello".
-var hello = "hey".
+var hello = "hey, world".
 var age = 13.1.
 var mybool = true.
 var anything_anything = loremipsumistrue.
@@ -9,3 +10,5 @@ print = $age.
 print = $mybool.
 print = $anything_anything.
 print = $false.
+CMND:PRINT_VARS[hello].
+CMND:RETURN_VARS.
