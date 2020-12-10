@@ -1,10 +1,33 @@
-const fs = require("fs"), chalk = require("chalk"),readline = require('readline'),rl = readline.createInterface({input: process.stdin,output: process.stdout})
-let str,vars,shell,classes,l
+const fs = require("fs"), chalk = require("chalk"),prompt = require("prompt-sync")()
+let str,vars,shell,classes,l,stri,file,chars,lines
+lines = 0
+stri = ""
+vars = {}, classes = {}
+
+console.log("Iridium Console Compiler v0.1 Alpha");
+a = prompt('>>> ')  
+while(a !== "q") {
+	if (a.indexOf("iri -c ") !== -1) {
+		for (var i = 7; i < a.length; i++) {
+			stri += a[i]
+		}
+		console.log(chalk.bgBlue("Parsing file") + chalk.bgHex("#007766")(" ") + chalk.bgCyan(stri))
+		file = stri
+		parse(fs.readFileSync(file, "utf-8"));
+	} else if (a.indexOf("iri -r") !== -1) {
+		while(a !== "q") {
+			a = prompt("\t>>")
+			parse(a)
+		}
+	}
+	a = prompt('>>> ')
+}
+
 function parse(string) {
   str = string.split(/\r?\n/)
-	vars = {}
-	classes = {}
   str.forEach(line => {
+		chars = line.length
+		lines++
     let match
 		// String Variable
     if (match = line.match(/^var\s+(\w+)\s+=\s+"(.*)"\.$/)) {
@@ -59,9 +82,9 @@ function parse(string) {
 		// 
 		else if (match = line.match(/CMND:RETURN_VARS\./)) {
 			console.log(chalk.bgRed("DeprecatedError: The function " + chalk.bgBlack.redBright(line)) + chalk.bgRed(" is deprecated."))
-		} 
+		}
 		// Comments and syntax errors
-		else if (!/\/\/([\s\S]*)/.test(line)) {
+		else if (!/\/\/([\s\S]*)|\s/.test(line)) {
       console.log(chalk.bgRed("SyntaxError: " + chalk.hex('#ff0000').bgBlack(line) + chalk.bgRed(" is not valid.")))
     }
   });
@@ -74,17 +97,19 @@ function parse(string) {
 // 	return name + " took " + end + "ms."
 // }
 
-parse(fs.readFileSync("main.iri", "utf-8"));
+console.log(chalk.hex("#aaf")("________________________________________________________"))
+console.log(chalk.bgHex('#ff0201').hex('#00f')('Variables at end of process:'))
+console.log(vars)
 
 // else if (match = line.match(/^\s{2,4}print\s+=\s+"(.+)"\.\s+in\s+(\w+)$/)) {
-		// 	classes[match[2]][`line${l}`] = line
-		// 	l++
-    // } else if (match = line.match(/^\s{2,4}print\s+=\s+(\w+)\.\s+in\s+(\w+)$/)) {
-		// 	classes[match[2]][`line${l}`] = line
-		// 	l++
-    // } else if (match = line.match(/^\s{2,4}print\s+=\s+([\d\.]+)\.\s+in\s+(\w+)$/)) {
-		// 	classes[match[2]][`line${l}`] = line
-		// 	l++
-    // } else if (match = line.match(/^class\s+(\w+)\s*{$/)) {
-		// 	classes[match[1]] = {}
-    // }
+// 			classes[match[2]][`line${l}`] = line
+// 			l++
+//     } else if (match = line.match(/^\s{2,4}print\s+=\s+(\w+)\.\s+in\s+(\w+)$/)) {
+// 			classes[match[2]][`line${l}`] = line
+// 			l++
+//     } else if (match = line.match(/^\s{2,4}print\s+=\s+([\d\.]+)\.\s+in\s+(\w+)$/)) {
+// 			classes[match[2]][`line${l}`] = line
+// 			l++
+//     } else if (match = line.match(/^class\s+(\w+)\s*{$/)) {
+// 			classes[match[1]] = {}
+//     }

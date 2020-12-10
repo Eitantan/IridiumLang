@@ -11,22 +11,27 @@ Iridium is a Object-Oriented Programming Language Designed to be Simple and Powe
 - Its written in the blazing fast language Rust (there's also a NodeJS version, which has more syntax.)
 - Syntax for getting internal variables
 
-
 # Syntax (unfinished)
 
 
 note: every statement must end with a period
 
-
-## Enviroment Variables
+## Startup
+Make sure you have Iridium installed or NodeJS, and then, when it prompts you to do a command:
+```>>> ```
+Type in:
+```shell
+>>> iri -c path/to/file.iri
 ```
-advanced-mode = true. //sets advanced syntax to true. Includes Linux command support and C-Like syntax
-graphics-mode = true. //sets the graphics_EngineOn internal variable to true
-web_mode = true. // make a web with Iridium
-shell = true. // sets a shell loop after every program runs.
+You can use literally any extension, but `.iri` is usually used as not to interrupt the compilers/interpreters of other languages.
 
 
-```
+## ~~Enviroment Variables~~
+~~advanced-mode = true. //sets advanced syntax to true. Includes Linux command support and C-Like syntax~~
+~~graphics-mode = true. //sets the graphics_EngineOn internal variable to true~~
+```web_mode = true. // make a web with Iridium```
+~~shell = true. // sets a shell loop after every program runs.~~
+
 ## Output:
 ```
 print = "hello".
