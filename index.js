@@ -7,7 +7,7 @@ vars = {}, classes = {}
 console.log("Iridium Console Compiler v0.1 Alpha");
 a = prompt('>>> ')  
 while(a !== "q") {
-	if (a.indexOf("iri -c ") !== -1) {
+	if (a.indexOf("iri -i ") !== -1) {
 		for (var i = 7; i < a.length; i++) {
 			stri += a[i]
 		}
