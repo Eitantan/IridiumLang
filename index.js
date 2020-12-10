@@ -4,12 +4,16 @@ lines = 0
 stri = ""
 vars = {}, classes = {}
 
-console.log("Iridium Console Compiler v0.1 Alpha");
-a = prompt('>>> ')  
+console.log("Iridium Shell v0.1 Alpha");
+a = prompt('>>> ') 
+
 while(a !== "q") {
 	if (a.indexOf("iri -i ") !== -1) {
 		for (var i = 7; i < a.length; i++) {
 			stri += a[i]
+		}
+		if (a.indexOf(".") === -1) {
+			stri += ".iri"
 		}
 		console.log(chalk.bgBlue("Parsing file") + chalk.bgHex("#007766")(" ") + chalk.bgCyan(stri))
 		file = stri
@@ -19,6 +23,8 @@ while(a !== "q") {
 			a = prompt("\t>>")
 			parse(a)
 		}
+	} else {
+		console.log(chalk.hex('#ff0402')("Could not find that command."))
 	}
 	a = prompt('>>> ')
 }
@@ -71,8 +77,13 @@ function parse(string) {
 			} else {
 				console.log(chalk.bgRed('NameError: Variable "' + chalk.bgBlack.hex('#ff0000')(match[1]) + '" not exist'))
 			}
-		// Internal Commands: Print All Variables
-    } else if (match = line.match(/^CMND:PRINT_VARS\.$/)) {
+    }
+		// Input
+		else if (match = line.match(/^var\s+(\w+)\s+=\s+$/)) {
+			prompt(chalk.hex("#ff9900")(match[1]))
+    }
+		// Internal Commands
+		else if (match = line.match(/^CMND:PRINT_VARS\.$/)) {
 			console.log(vars)
 		} 
 		// Internal Commands: Print A Variable
@@ -88,6 +99,8 @@ function parse(string) {
       console.log(chalk.bgRed("SyntaxError: " + chalk.hex('#ff0000').bgBlack(line) + chalk.bgRed(" is not valid.")))
     }
   });
+	file = ""
+	stri = ""
 }
 
 // function rec(name,func) {
