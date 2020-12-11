@@ -35,15 +35,15 @@ You can use literally any extension, but `.iri` is usually used as not to interr
 
 ## Output:
 ```
-print = "hello".
+Console.out('Hello!");
 ```
-
+You do NOT need matching quotes.
 ## Declaring Variables
 ```
-var sample = "Strings are the first data types supported.".
-var boolean_supported = true.
-var this_is_true = ButBooleanAreSupportedToo.
-var age = 13.4. // and numbers!
+var sample = "Strings are the first data types supported.";
+var boolean_supported = true;
+var this_is_true = ButBooleanAreSupportedToo;
+var age = 13.4; // and numbers!
 ```
 
 ## Printing Variables
