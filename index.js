@@ -4,7 +4,7 @@ lines = 0
 stri = ""
 vars = {}, classes = {}
 
-console.log("Iridium Shell v0.1 Alpha (JS)");
+console.log(chalk.bgCyanBright.hex('#0009ff')(("Iridium Shell v1.0 Alpha; Iridium v0.0.0 (JS)")));
 a = prompt('>>> ') 
 
 while(a !== "q") {
