@@ -14,10 +14,9 @@ Iridium is a Object-Oriented Programming Language Designed to be Simple and Powe
 # Syntax (unfinished)
 
 
-note: every statement must end with a semicolon
+note: every statement must end with a period
 
 ## Startup
-## Node Instructions
 Make sure you have Iridium installed or NodeJS, and then, when it prompts you to do a command:
 ```>>> ```
 Type in:
@@ -35,15 +34,15 @@ You can use literally any extension, but `.iri` is usually used as not to interr
 
 ## Output:
 ```
-Console.out('Hello!");
+print = "hello".
 ```
-You do NOT need matching quotes.
+
 ## Declaring Variables
 ```
-var sample = "Strings are the first data types supported.";
-var boolean_supported = true;
-var this_is_true = ButBooleanAreSupportedToo;
-var age = 13.4; // and numbers!
+var sample = "Strings are the first data types supported.".
+var boolean_supported = true.
+var this_is_true = ButBooleanAreSupportedToo.
+var age = 13.4. // and numbers!
 ```
 
 ## Printing Variables

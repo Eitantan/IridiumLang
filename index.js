@@ -4,7 +4,7 @@ lines = 0
 stri = ""
 vars = {}, classes = {}
 
-console.log(chalk.bgCyanBright.hex('#0009ff')(("Iridium Shell v1.0 Alpha; Iridium v0.0.0 (JS)")));
+console.log("Iridium Shell v0.1 Alpha (JS)");
 a = prompt('>>> ') 
 
 while(a !== "q") {
@@ -57,7 +57,7 @@ function parse(string) {
 				vars[match[1]] = Boolean(match[2])
 			}
 		// Print Strings
-    } else if (match = line.match(/console\.out\(['"](\s\S)['"]\);?$/)) {
+    } else if (match = line.match(/console\.out\(['"]([\s\S]+)['"]\);?$/)) {
 			process.stdout.write(chalk.hex("#ff9900")(String(match[1])))
     } 
 		// Print Variables
