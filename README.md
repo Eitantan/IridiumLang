@@ -1,5 +1,4 @@
 # Iridium Programming Language
-## What is Iridium?
 Iridium is a Object-Oriented Programming Language Designed to be Simple and Powerful.
 
 ## Whats special about Iridium?
