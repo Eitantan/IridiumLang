@@ -12,9 +12,6 @@ Iridium is a Object-Oriented Programming Language Designed to be Simple and Powe
 
 # Syntax (unfinished)
 
-
-note: every statement must end with a period
-
 ## Startup
 Make sure you have Iridium installed or NodeJS, and then, when it prompts you to do a command:
 ```>>> ```
@@ -33,7 +30,8 @@ You can use literally any extension, but `.iri` is usually used as not to interr
 
 ## Output:
 ```
-print = "hello".
+Console.out('Hello")
+// Can use any combination of quotes. :D
 ```
 
 ## Declaring Variables
