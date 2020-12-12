@@ -7,6 +7,7 @@ vars = {}, classes = {}
 console.log("Iridium Shell v0.1 Alpha (JS)");
 a = prompt('>>> ') 
 
+// Shell loop
 while(a !== "q") {
 	if (a.indexOf("iri -i ") !== -1) {
 		for (var i = 7; i < a.length; i++) {
@@ -19,7 +20,7 @@ while(a !== "q") {
 		file = stri
 		parse(fs.readFileSync(file, "utf-8"));
 	} else if (a.indexOf("iri -r") !== -1) {
-		while(a !== "q") {
+		while(a !== "//q") {
 			a = prompt("\t>>")
 			parse(a)
 		}
@@ -35,16 +36,15 @@ function parse(string) {
 		chars = line.length
 		lines++
     let match
-		if (match = line.match(/>$/)) {
-			process.stdout.write('\n')
-    } 
 		// String Variable
     if (match = line.match(/^var\s+(\w+)\s+=\s+"(.*)";?$/)) {
 			vars[match[1]] = match[2]
+			console.log(vars)
     } 
 		// Number Variable
 		else if (match = line.match(/^var\s+(\w+)\s+=\s+([\d\.]+);?$/)) {
 			vars[match[1]] = Number(match[2])
+			console.log(vars)
     } 
 		// Boolean Variable
 		else if (match = line.match(/^var\s+(\w+)\s+=\s+(\w+);?$/)) {
@@ -56,12 +56,22 @@ function parse(string) {
 			else {
 				vars[match[1]] = Boolean(match[2])
 			}
-		// Print Strings
-    } else if (match = line.match(/console\.out\(['"]([\s\S]+)['"]\);?$/)) {
-			process.stdout.write(chalk.hex("#ff9900")(String(match[1])))
+			console.log(vars)
     } 
+		// Input
+		else if (match = line.match(/^var\s+(\w+)\s+=\s+Console\.in\(['"]([\s\S]+)['"]\);?$/)) {
+			vars[match[1]] = prompt(chalk.hex('#ff9900')(match[2]))
+    }
+		// Output
+		else if (match = line.match(/^Console\.out\(['"]([\s\S]+)['"]\);?$/)) {
+			process.stdout.write(chalk.hex("#ff9900")(String(match[1])))
+    }
+		// Newline
+		else if (match = line.match(/^Console\.nl\(\);?$/)) {
+			process.stdout.write('\n')
+    }
 		// Print Variables
-		else if (match = line.match(/^print\s+=\s+\$(\w+);?$/)) {
+		else if (match = line.match(/^Console\.out\(\$([\s\S]+)\);?$/)) {
 			// If it exists
 			if (match[1] in vars) {
 				// If the variable is a string, show it in hex color #ffff55
@@ -80,10 +90,6 @@ function parse(string) {
 			} else {
 				console.log(chalk.bgRed('NameError: Variable "' + chalk.bgBlack.hex('#ff0000')(match[1]) + '" not exist'))
 			}
-    }
-		// Input
-		else if (match = line.match(/^var\s+(\w+)\s+=\s+input\(['"]([\s\S]+)['"]\);?$/)) {
-			vars[match[1]] = prompt(chalk.hex("#ff9900")(match[2]))
     }
 		// Internal Commands
 		else if (match = line.match(/^CMND:PRINT_VARS;?$/)) {

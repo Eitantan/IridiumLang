@@ -1,2 +1,5 @@
-// Start blank on testing
-// Plz do testing
+Console.out('Hi!")
+Console.nl()
+var name = Console.in('What is your name? ")
+Console.out('Hello, ')
+Console.out($name)
