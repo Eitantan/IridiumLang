@@ -9,4 +9,4 @@
 
 
 ## Reporting a Vulnerability
-Go to issues and report. We will apply the Security Issue lable. 
+Go to issues and report with the Security Issue label
