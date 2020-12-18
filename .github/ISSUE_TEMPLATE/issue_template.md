@@ -1,7 +1,7 @@
 ---
 name: Security issue
 about: Use this template for submitting security vulnerabilities.
-title: "[DATE]: [FEATURE NAME]"
+title: "Security Issue"
 labels: "Security Issue"
 assignees: staticvoidliam7
 ---
