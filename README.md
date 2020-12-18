@@ -30,7 +30,7 @@ You can use literally any extension, but `.iri` is usually used as not to interr
 
 ## Output:
 ```
-Console.out('Hello")
+Console.out('Hello").
 // Can use any combination of quotes. :D
 ```
 
@@ -70,9 +70,7 @@ static method_name(arg1,arg2){
 
 ## Decisions & Accepting user input
 ```
-Userinput().
-// example:
-string hewwo = Userinput().
+Console.In().
 ```
 ## Math
 ```
