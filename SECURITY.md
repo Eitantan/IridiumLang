@@ -1,12 +1,21 @@
 # Security Policy
 
 ## Supported Versions
-0.1 Alpha
+None yet.
 
 | Version | Supported          |
 | ------- | ------------------ |
-| 0.1.x   | :white_check_mark: |
+|    0    |         :x:        |
 
 
 ## Reporting a Vulnerability
 Go to issues and report with the Security Issue label
+
+## Symbols
+⚠️: Warning! This my be glitchy or not completely tested.
+
+:x:: Not working, or not usable.
+
+:white_check_mark:: Good to go!
+
+:heavy_check_mark:: Not encouraged to use, but is possible.
