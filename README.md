@@ -8,7 +8,10 @@ Iridium is a Object-Oriented Programming Language Designed to be Simple and Powe
 - It's perfect for beginners and pros alike!
 - It's open-source under the MIT License
 - Its written in C# (there's also a NodeJS version, which has more syntax.)
-- Syntax for getting internal variables
+- Syntax for getting internal
+
+## Installation
+To install the rust build, there will be a Rust release. For contributing to the project, there is a RS-Build branch. 
 
 # Syntax (unfinished)
 
