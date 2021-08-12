@@ -6,7 +6,7 @@ Iridium is a Object-Oriented Programming Language Designed to be Simple and Powe
 - It's powerful
 - It's free
 - It's perfect for beginners and pros alike!
-- It's open-source under the GNU General Public License v3.0
+- It's open-source under the MIT License
 - Its written in C# (there's also a NodeJS version, which has more syntax.)
 - Syntax for getting internal variables
 
@@ -93,7 +93,7 @@ a = percent(5.1).
 
 a = Decimal(5).
 
-a = 
+
 ```
 ## Data Structures
 ```
