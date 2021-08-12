@@ -1,5 +1,5 @@
 # For Contributers: IMPORTANT
-There will be no code for the language in the ```master``` branch. This is because there are 2 branches for the code. RS-Build (Rust), and JS-Build. The ```master``` branch will be for the website. 
+There will be no code for the language in the ```master``` branch. This is because there are 2 branches for the code. RS-Build (Rust), and JS-Build (Javascript). The ```master``` branch will be for the website. 
 
 # Iridium Programming Language
 Iridium is a Object-Oriented Programming Language Designed to be Simple and Powerful.
