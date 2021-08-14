@@ -10,7 +10,7 @@ Iridium is a Object-Oriented Programming Language Designed to be Simple and Powe
 - It's free
 - It's perfect for beginners and pros alike!
 - It's open-source under the MIT License
-- Its written in C# (there's also a NodeJS version, which has more syntax.)
+- Its written in Rust (there's also a NodeJS version, which has more syntax at the moment, due to early development)
 - Syntax for getting internal
 
 ## Installation
